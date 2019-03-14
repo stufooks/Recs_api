@@ -14,3 +14,9 @@ def song_create(request):
         data = json.loads(request.body)
         Song.objects.create(track=data['track'], artist=data['artist'])
         return JsonResponse("create successful", safe=False)
+
+def song_delete(request):
+    if request.method == "DELETE":
+        data = json.loads(request.body)
+        Song.objects.filter(id=data['rowData']['id']).delete()
+        return JsonResponse("delete successful", safe=False)
