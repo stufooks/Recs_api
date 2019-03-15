@@ -28,7 +28,7 @@ SECRET_KEY = environ.get('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['evening-reef-23065.herokuapp.com/', '52.4.95.228']
+ALLOWED_HOSTS = ['52.4.95.228']
 
 
 # Application definition
