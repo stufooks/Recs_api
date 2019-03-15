@@ -1,0 +1,1 @@
+web: gunicorn Recs_api.wsgi —-log-file -
