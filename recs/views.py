@@ -26,13 +26,13 @@ def book_list(request):
     books_list = list(books)
     return JsonResponse(books_list, safe=False)
 
-def song_create(request):
+def book_create(request):
     if request.method == "POST":
         data = json.loads(request.body)
         Book.objects.create(track=data['title'], artist=data['author'])
         return JsonResponse("create successful", safe=False)
 
-def song_delete(request):
+def book_delete(request):
     if request.method == "DELETE":
         data = json.loads(request.body)
         Book.objects.filter(id=data['rowData']['id']).delete()
