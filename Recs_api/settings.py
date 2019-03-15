@@ -12,10 +12,10 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 from os import environ
-import 'dj-database-url'
+import dj-database-url
 
-db_from_env = dj_database_url.config()
-DATABASES[‘default’].update(db_from_env)
+# db_from_env = dj_database_url.config()
+# DATABASES[‘default’].update(db_from_env)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -79,15 +79,16 @@ WSGI_APPLICATION = 'Recs_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'recs',
-        'USER': 'recsadmin',
-        'PASSWORD': 'recsadmin',
-        'HOST': 'localhost'
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'recs',
+#         'USER': 'recsadmin',
+#         'PASSWORD': 'recsadmin',
+#         'HOST': 'localhost'
+#     }
+# }
+DATABASES['default'].update(dj_database_url.config())
 
 
 # Password validation
